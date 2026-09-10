@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Next.js build output and static export
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Test output
+coverage/
+
+# Environment files (may contain secrets)
+.env
+.env.*
+!.env.example
+
+# Per-machine agent tooling state
+.claude/settings.local.json
+.impeccable/config.local.json
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/build/
+**/skills/impeccable/scripts/bin/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

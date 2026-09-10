@@ -1,0 +1,8 @@
+/* Import order matters: reset, then component styles, then theme tokens. */
+@import '@astryxdesign/core/reset.css';
+@import '@astryxdesign/core/astryx.css';
+@import '@astryxdesign/theme-neutral/theme.css';
+
+/* StyleX product styles are injected here by the PostCSS plugin, after the
+   Astryx layers, so they win without extra specificity. */
+@stylex;

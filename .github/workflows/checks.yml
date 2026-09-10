@@ -1,0 +1,41 @@
+name: Repository checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  baseline:
+    name: Required files
+    uses: Artic0din/reusable-workflows/.github/workflows/baseline.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0
+    with:
+      required-files: README.md, LICENSE, .gitignore, AGENTS.md, CHANGELOG.md
+
+  build-and-test:
+    name: Build and test
+    uses: Artic0din/reusable-workflows/.github/workflows/ci.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0
+    with:
+      python: false
+      npm: true
+      npm-build-script: build
+      npm-test-script: check
+
+  workflows:
+    name: Workflow validation
+    uses: Artic0din/reusable-workflows/.github/workflows/linter.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0
+    with:
+      yaml-paths: |
+        .github
+        .yamllint.yml
+
+  secrets:
+    name: Secret scan
+    uses: Artic0din/reusable-workflows/.github/workflows/secret-scan.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0

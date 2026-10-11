@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Moved the repository baseline to the reviewed DevKit workflow while preserving its required files and check name.
+
 ### Added
 
 - Site skeleton: Next.js static export with Astryx and StyleX, a home page, a 404 page, and a shared shell with navigation and footer.

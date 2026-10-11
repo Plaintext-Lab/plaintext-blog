@@ -15,13 +15,13 @@ concurrency:
 jobs:
   baseline:
     name: Required files
-    uses: Artic0din/reusable-workflows/.github/workflows/baseline.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0
+    uses: Artic0din/devkit/.github/workflows/baseline.yml@546c21be3806b28c2ca71507da160e187626a2a0 # DevKit PR #50 + #52 (reviewed merge commit; unreleased)
     with:
       required-files: README.md, LICENSE, .gitignore, AGENTS.md, CHANGELOG.md
 
   build-and-test:
     name: Build and test
-    uses: Artic0din/reusable-workflows/.github/workflows/ci.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0
+    uses: Artic0din/reusable-workflows/.github/workflows/ci.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1 # v1.1.0
     with:
       python: false
       npm: true
@@ -30,7 +30,7 @@ jobs:
 
   workflows:
     name: Workflow validation
-    uses: Artic0din/reusable-workflows/.github/workflows/linter.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0
+    uses: Artic0din/reusable-workflows/.github/workflows/linter.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1 # v1.1.0
     with:
       yaml-paths: |
         .github
@@ -38,4 +38,4 @@ jobs:
 
   secrets:
     name: Secret scan
-    uses: Artic0din/reusable-workflows/.github/workflows/secret-scan.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1  # v1.1.0
+    uses: Artic0din/reusable-workflows/.github/workflows/secret-scan.yml@ad2f70ec9dbf008652223e77424e9b329c835ad1 # v1.1.0

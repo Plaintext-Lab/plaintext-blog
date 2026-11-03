@@ -14,6 +14,12 @@ export const site = {
   // Dates on the site are rendered in this zone. Change it here if the site
   // is ever run from somewhere else; nothing downstream assumes Melbourne.
   timeZone: 'Australia/Melbourne',
+  // PostHog project for site analytics. The project key is public by design:
+  // it only allows sending events, and every visitor's browser receives it.
+  posthog: {
+    projectKey: 'phc_rJyMXYsXJKvvqUqHKcRbpJHWRU8qQbtKY3wgM9TyByts', // gitleaks:allow
+    apiHost: 'https://us.i.posthog.com',
+  },
 } as const;
 
 export type SiteConfig = typeof site;

@@ -1,0 +1,2 @@
+# PostHog project key (public by design) in the commit before it got an inline gitleaks:allow.
+3108ef45692c71687663b687f926c6b686430d92:src/config/site.ts:generic-api-key:20

@@ -17,7 +17,7 @@ export const site = {
   // PostHog project for site analytics. The project key is public by design:
   // it only allows sending events, and every visitor's browser receives it.
   posthog: {
-    projectKey: 'phc_rJyMXYsXJKvvqUqHKcRbpJHWRU8qQbtKY3wgM9TyByts',
+    projectKey: 'phc_rJyMXYsXJKvvqUqHKcRbpJHWRU8qQbtKY3wgM9TyByts', // gitleaks:allow
     apiHost: 'https://us.i.posthog.com',
   },
 } as const;
